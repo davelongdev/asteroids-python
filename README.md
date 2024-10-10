@@ -1,6 +1,6 @@
 # Asteroids Game
 
-This is an asteroids game written in python with the [pygame](https://www.pygame.org) library.
+This is an asteroids game written in python with the [pygame](https://www.pygame.org) library.  The code makes use of object-oriented programming (OOP).
 
 ## Status
 
