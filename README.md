@@ -1,8 +1,10 @@
-# An asteroids game written in Python
+# Asteroids Game
+
+This is an asteroids game written in python with the [pygame](https://www.pygame.org) library.
 
 ## Status
 
-This is an asteroids game written in python.  The basic functionality is finished.
+The basic functionality is finished.  I plan to extened / customize this project in the future.
 
 ## To Do
 
