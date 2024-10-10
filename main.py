@@ -1,5 +1,5 @@
 import pygame
-import player
+from player import Player
 from constants import *
 
 
@@ -7,18 +7,33 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
+   
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
+
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
     dt = 0
-    playerVar = player.Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    
+
     #game loop
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-        playerVar.update(dt)
+
+        for obj in updatable:
+            obj.update(dt)
+
         screen.fill("black")
-        playerVar.draw(screen)
+
+        for obj in drawable:
+            obj.draw(screen)
+
         pygame.display.flip()
+
+        # limit the framrate to 60 fps
         dt = clock.tick(60) / 1000
 
 
